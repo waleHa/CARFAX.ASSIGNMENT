@@ -1,8 +1,11 @@
 package com.wa7a.carfaxassignment.data.model
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class FirstPhoto(
     @SerializedName("large ")
     val large: String? = null,//REQUIRED
@@ -10,4 +13,4 @@ data class FirstPhoto(
 //    val medium: String? = null,
 //    @SerializedName("small")
 //    val small: String? = null
-)
+):Parcelable

@@ -1,8 +1,11 @@
 package com.wa7a.carfaxassignment.data.model
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Dealer(
 //    @SerializedName("address")
 //    val address: String? = null,
@@ -36,4 +39,4 @@ data class Dealer(
     val state: String? = null,//REQUIRED?
 //    @SerializedName("zip")
 //    val zip: String? = null
-)
+):Parcelable

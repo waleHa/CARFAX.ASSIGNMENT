@@ -1,8 +1,11 @@
 package com.wa7a.carfaxassignment.data.model
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Listings(
 //    @SerializedName("advantage")
 //    val advantage: Boolean? = null,
@@ -106,4 +109,4 @@ data class Listings(
     val vin: String? = null,//REQUIRED
 //    @SerializedName("year")
 //    val year: Int? = null
-)
+):Parcelable
