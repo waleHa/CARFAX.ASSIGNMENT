@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+    <style name="bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="bold.large">
+        <item name="android:textSize">@dimen/text_large</item>
+    </style>
+    <style name="bold.xlarge">
+        <item name="android:textSize">@dimen/text_xlarge</item>
+    </style>
+
+</resources>
