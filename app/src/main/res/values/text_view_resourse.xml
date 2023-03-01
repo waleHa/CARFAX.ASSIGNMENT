@@ -5,6 +5,9 @@
     <style name="bold">
         <item name="android:textStyle">bold</item>
     </style>
+    <style name="bold.medium">
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
     <style name="bold.large">
         <item name="android:textSize">@dimen/text_large</item>
     </style>

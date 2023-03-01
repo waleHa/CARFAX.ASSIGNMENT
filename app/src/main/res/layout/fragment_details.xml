@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/image_view_details"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,11 +20,11 @@
 
     <TextView
         android:id="@+id/text_view_details_year_make_model_trim"
-        style="@style/bold.large"
+        style="@style/bold.medium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/margin_large"
-        android:paddingVertical="@dimen/padding_medium"
+        android:paddingVertical="@dimen/padding_small"
         android:textAlignment="viewStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,10 +33,10 @@
 
     <TextView
         android:id="@+id/text_view_details_price_mileage"
-        style="@style/bold.xlarge"
+        style="@style/bold.large"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingVertical="@dimen/padding_medium"
+        android:paddingVertical="@dimen/padding_small"
         app:layout_constraintEnd_toEndOf="@+id/text_view_details_year_make_model_trim"
         app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
         app:layout_constraintTop_toBottomOf="@+id/text_view_details_year_make_model_trim"
@@ -65,10 +65,10 @@
 
     <TextView
         android:id="@+id/text_view_vehicle_info"
-        style="@style/bold.large"
+        style="@style/bold.medium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/padding_xlarge"
+        android:paddingBottom="@dimen/padding_large"
         android:text="Vehicle Info"
         android:textAlignment="viewStart"
         app:layout_constraintEnd_toEndOf="@+id/text_view_details_year_make_model_trim"
@@ -86,7 +86,7 @@
 
     <TextView
         android:id="@+id/text_view_details_location"
-        style="@style/bold.large"
+        style="@style/bold.medium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -105,7 +105,7 @@
 
     <TextView
         android:id="@+id/text_view_details_exterior_color"
-        style="@style/bold.large"
+        style="@style/bold.medium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -124,7 +124,7 @@
 
     <TextView
         android:id="@+id/text_view_details_interior_color"
-        style="@style/bold.large"
+        style="@style/bold.medium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -144,7 +144,7 @@
 
     <TextView
         android:id="@+id/text_view_details_drive_type"
-        style="@style/bold.large"
+        style="@style/bold.medium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -163,7 +163,7 @@
 
     <TextView
         android:id="@+id/text_view_details_transmission"
-        style="@style/bold.large"
+        style="@style/bold.medium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -182,7 +182,7 @@
 
     <TextView
         android:id="@+id/text_view_details_body_style"
-        style="@style/bold.large"
+        style="@style/bold.medium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -201,7 +201,7 @@
 
     <TextView
         android:id="@+id/text_view_details_engine"
-        style="@style/bold.large"
+        style="@style/bold.medium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -221,7 +221,7 @@
 
     <TextView
         android:id="@+id/text_view_details_fuel"
-        style="@style/bold.large"
+        style="@style/bold.medium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -246,7 +246,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_medium"
         android:background="@color/blue"
-        android:padding="@dimen/padding_medium"
         android:text="@string/button_details_text"
         android:textSize="@dimen/text_large"
         app:layout_constraintBottom_toBottomOf="parent" />
