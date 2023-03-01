@@ -12,6 +12,7 @@
     <dimen name="text_small">8dp</dimen>
     <dimen name="text_medium">16dp</dimen>
     <dimen name="text_large">24dp</dimen>
-    <dimen name="text_xlarge">40dp</dimen>
+    <dimen name="text_xlarge">32dp</dimen>
+
 
 </resources>

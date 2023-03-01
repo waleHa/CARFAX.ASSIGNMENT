@@ -43,8 +43,8 @@ data class ListingsRemoteModel(
 //    val followCount: Int? = null,
 //    @SerializedName("following")
 //    val following: Boolean? = null,
-//    @SerializedName("fuel")
-//    val fuel: String? = null,
+    @SerializedName("fuel")
+    val fuel: String? = null,
 //    @SerializedName("hasViewed")
 //    val hasViewed: Boolean? = null,
 //    @SerializedName("id")
@@ -111,10 +111,25 @@ data class ListingsRemoteModel(
     val year: Int? = null
 ):Parcelable
 {
-    fun listingDealerAddress() = "${dealer?.city} | ${dealer?.state}"
+    fun listingDealerAddress() = "${dealer?.city}, ${dealer?.state}"
 
-    fun listingPriceMileage() = "$currentPrice | $mileage"
+    fun listingPriceMileage() = "$ ${currentPrice?.toInt()?.formatDecimalSeparator()}  |  ${mileage?.formatNumberShortcut()} mi"
 
     fun listingYearMakeModelTrip() = "$year $make $model $trim"
     fun getImageUrl() = "${images?.large?.get(0)}"
+}
+
+fun Int.formatDecimalSeparator(): String {
+    return toString()
+        .reversed()
+        .chunked(3)
+        .joinToString(",")
+        .reversed()
+}
+
+fun Int.formatNumberShortcut(): String {
+    if (this < 1000)
+        return "" + this
+    val exp = (Math.log(this.toDouble()) / Math.log(1000.0)).toInt()
+    return String.format("%.1f %c", this / Math.pow(1000.0, exp.toDouble()), "kM"[exp - 1])
 }

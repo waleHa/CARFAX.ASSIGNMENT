@@ -1,252 +1,272 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.main.DetailsFragment">
+    tools:context=".ui.details.DetailsFragment">
 
+    <data>
+        <variable
+            name="item"
+            type="com.wa7a.carfaxassignment.data.model.ListingsRemoteModel" />
+    </data>
 
-    <ImageView
-        android:id="@+id/image_view_details"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_launcher_background" />
-
-    <TextView
-        android:id="@+id/text_view_details_year_make_model_trim"
-        style="@style/bold.medium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/margin_large"
-        android:paddingVertical="@dimen/padding_small"
-        android:textAlignment="viewStart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_view_details"
-        tools:text="2011 BMW 3 Series 328i" />
-
-    <TextView
-        android:id="@+id/text_view_details_price_mileage"
-        style="@style/bold.large"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:paddingVertical="@dimen/padding_small"
-        app:layout_constraintEnd_toEndOf="@+id/text_view_details_year_make_model_trim"
-        app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_details_year_make_model_trim"
-        tools:text="$ 17,234 | 39.1K mi" />
-
-    <View
-        android:id="@+id/view1"
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:layout_marginTop="@dimen/margin_large"
-        android:background="@color/very_light_grey"
-        app:layout_constraintEnd_toStartOf="@+id/view2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_details_price_mileage" />
-
-    <View
-        android:id="@+id/view2"
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:layout_marginTop="@dimen/margin_large"
-        android:background="@color/very_light_grey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view1"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_details_price_mileage" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/text_view_vehicle_info"
-        style="@style/bold.medium"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/padding_large"
-        android:text="Vehicle Info"
-        android:textAlignment="viewStart"
-        app:layout_constraintEnd_toEndOf="@+id/text_view_details_year_make_model_trim"
-        app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
-        app:layout_constraintTop_toBottomOf="@+id/view1" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_view_details"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            imageSetter="@{item.getImageUrl}"
+            tools:src="@drawable/ic_launcher_background" />
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Location"
-        android:textSize="@dimen/text_large"
-        app:layout_constraintEnd_toEndOf="@+id/view1"
-        app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_vehicle_info" />
+        <TextView
+            android:id="@+id/text_view_details_year_make_model_trim"
+            style="@style/bold.medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:paddingVertical="@dimen/padding_small"
+            android:textAlignment="viewStart"
+            android:text="@{item.listingYearMakeModelTrip}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_view_details"
+            tools:text="2011 BMW 3 Series 328i" />
 
-    <TextView
-        android:id="@+id/text_view_details_location"
-        style="@style/bold.medium"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view1"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_vehicle_info"
-        tools:text="123" />
+        <TextView
+            android:id="@+id/text_view_details_price_mileage"
+            style="@style/bold.xlarge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/padding_small"
+            android:text="@{item.listingPriceMileage}"
+            app:layout_constraintEnd_toEndOf="@+id/text_view_details_year_make_model_trim"
+            app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_details_year_make_model_trim"
+            tools:text="$ 17,234 | 39.1K mi" />
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Exterior Color"
-        android:textSize="@dimen/text_large"
-        app:layout_constraintEnd_toEndOf="@+id/view1"
-        app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_details_location" />
+        <View
+            android:id="@+id/view1"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_large"
+            android:background="@color/very_light_grey"
+            app:layout_constraintEnd_toStartOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_details_price_mileage" />
 
-    <TextView
-        android:id="@+id/text_view_details_exterior_color"
-        style="@style/bold.medium"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view1"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_details_location"
-        tools:text="123" />
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Interior Color"
-        android:textSize="@dimen/text_large"
-        app:layout_constraintEnd_toEndOf="@+id/view1"
-        app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_details_exterior_color" />
-
-    <TextView
-        android:id="@+id/text_view_details_interior_color"
-        style="@style/bold.medium"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view1"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_details_exterior_color"
-        tools:text="123" />
+        <View
+            android:id="@+id/view2"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_large"
+            android:background="@color/very_light_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view1"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_details_price_mileage" />
 
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Drive Type"
-        android:textSize="@dimen/text_large"
-        app:layout_constraintEnd_toEndOf="@+id/view1"
-        app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_details_interior_color" />
+        <TextView
+            android:id="@+id/text_view_vehicle_info"
+            style="@style/bold.large"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/padding_large"
+            android:text="Vehicle Info"
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toEndOf="@+id/text_view_details_year_make_model_trim"
+            app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
+            app:layout_constraintTop_toBottomOf="@+id/view1" />
 
-    <TextView
-        android:id="@+id/text_view_details_drive_type"
-        style="@style/bold.medium"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view1"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_details_interior_color"
-        tools:text="123" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintEnd_toEndOf="@+id/view1"
+            app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_vehicle_info" />
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Transmission"
-        android:textSize="@dimen/text_large"
-        app:layout_constraintEnd_toEndOf="@+id/view1"
-        app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_details_drive_type" />
+        <TextView
+            android:id="@+id/text_view_details_location"
+            style="@style/bold.medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{item.listingDealerAddress()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view1"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_vehicle_info"
+            tools:text="123" />
 
-    <TextView
-        android:id="@+id/text_view_details_transmission"
-        style="@style/bold.medium"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view1"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_details_drive_type"
-        tools:text="123" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Exterior Color"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintEnd_toEndOf="@+id/view1"
+            app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_details_location" />
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Body Style"
-        android:textSize="@dimen/text_large"
-        app:layout_constraintEnd_toEndOf="@+id/view1"
-        app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_details_transmission" />
+        <TextView
+            android:id="@+id/text_view_details_exterior_color"
+            style="@style/bold.medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{item.exteriorColor}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view1"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_details_location"
+            tools:text="123" />
 
-    <TextView
-        android:id="@+id/text_view_details_body_style"
-        style="@style/bold.medium"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view1"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_details_transmission"
-        tools:text="123" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Interior Color"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintEnd_toEndOf="@+id/view1"
+            app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_details_exterior_color" />
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Engine"
-        android:textSize="@dimen/text_large"
-        app:layout_constraintEnd_toEndOf="@+id/view1"
-        app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_details_body_style" />
-
-    <TextView
-        android:id="@+id/text_view_details_engine"
-        style="@style/bold.medium"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view1"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_details_body_style"
-        tools:text="123" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Fuel"
-        android:textSize="@dimen/text_large"
-        app:layout_constraintEnd_toEndOf="@+id/view1"
-        app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_details_engine" />
-
-    <TextView
-        android:id="@+id/text_view_details_fuel"
-        style="@style/bold.medium"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view1"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_details_engine"
-        tools:text="123" />
+        <TextView
+            android:id="@+id/text_view_details_interior_color"
+            style="@style/bold.medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{item.interiorColor}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view1"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_details_exterior_color"
+            tools:text="123" />
 
 
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="2dp"
-        android:background="@color/grey"
-        android:padding="@dimen/padding_small"
-        app:layout_constraintBottom_toTopOf="@+id/button_details"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_details_fuel" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Drive Type"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintEnd_toEndOf="@+id/view1"
+            app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_details_interior_color" />
 
-    <Button
-        android:id="@+id/button_details"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_medium"
-        android:background="@color/blue"
-        android:text="@string/button_details_text"
-        android:textSize="@dimen/text_large"
-        app:layout_constraintBottom_toBottomOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/text_view_details_drive_type"
+            style="@style/bold.medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@{item.driveType}"
+            app:layout_constraintStart_toEndOf="@+id/view1"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_details_interior_color"
+            tools:text="123" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Transmission"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintEnd_toEndOf="@+id/view1"
+            app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_details_drive_type" />
+
+        <TextView
+            android:id="@+id/text_view_details_transmission"
+            style="@style/bold.medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@{item.transmission}"
+            app:layout_constraintStart_toEndOf="@+id/view1"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_details_drive_type"
+            tools:text="123" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Body Style"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintEnd_toEndOf="@+id/view1"
+            app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_details_transmission" />
+
+        <TextView
+            android:id="@+id/text_view_details_body_style"
+            style="@style/bold.medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{item.bodyType}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view1"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_details_transmission"
+            tools:text="123" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Engine"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintEnd_toEndOf="@+id/view1"
+            app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_details_body_style" />
+
+        <TextView
+            android:id="@+id/text_view_details_engine"
+            style="@style/bold.medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{item.engine}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view1"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_details_body_style"
+            tools:text="123" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Fuel"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintEnd_toEndOf="@+id/view1"
+            app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_details_engine" />
+
+        <TextView
+            android:id="@+id/text_view_details_fuel"
+            style="@style/bold.medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{item.fuel}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view1"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_details_engine"
+            tools:text="123" />
+
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="@color/grey"
+            android:padding="@dimen/padding_small"
+            app:layout_constraintBottom_toTopOf="@+id/button_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_details_fuel" />
+
+        <Button
+            android:id="@+id/button_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:background="@color/blue"
+            android:text="@string/button_details_text"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
