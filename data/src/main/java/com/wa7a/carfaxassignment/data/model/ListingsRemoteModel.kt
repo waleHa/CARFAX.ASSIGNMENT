@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Listings(
+data class ListingsRemoteModel(
 //    @SerializedName("advantage")
 //    val advantage: Boolean? = null,
 //    @SerializedName("backfill")
@@ -16,7 +16,7 @@ data class Listings(
 //    @SerializedName("bedLength")
 //    val bedLength: String? = null,
     @SerializedName("bodytype")
-    val bodytype: String? = null,//REQUIRED
+    val bodyType: String? = null,//REQUIRED
 //    @SerializedName("cabType")
 //    val cabType: String? = null,
 //    @SerializedName("certified")
@@ -24,7 +24,7 @@ data class Listings(
     @SerializedName("currentPrice")
     val currentPrice: Double? = null, //REQUIRED
     @SerializedName("dealer")
-    val dealer: Dealer? = null,//REQUIRED
+    val dealer: DealerRemoteModel? = null,//REQUIRED
 //    @SerializedName("dealerType")
 //    val dealerType: String? = null,
 //    @SerializedName("displacement")
@@ -32,7 +32,7 @@ data class Listings(
 //    @SerializedName("distanceToDealer")
 //    val distanceToDealer: Double? = null,
     @SerializedName("drivetype")
-    val drivetype: String? = null,//REQUIRED
+    val driveType: String? = null,//REQUIRED
     @SerializedName("engine")
     val engine: String? = null,//REQUIRED
     @SerializedName("exteriorColor")
@@ -52,19 +52,19 @@ data class Listings(
 //    @SerializedName("imageCount")
 //    val imageCount: Int? = null,
     @SerializedName("images")
-    val images: Images? = null,//REQUIRED
+    val images: ImagesRemoteModel,//REQUIRED
     @SerializedName("interiorColor")
     val interiorColor: String? = null,//REQUIRED
 //    @SerializedName("isEnriched")
 //    val isEnriched: Boolean? = null,
 //    @SerializedName("listPrice")
 //    val listPrice: Double? = null,
-//    @SerializedName("make")
-//    val make: String? = null,
+    @SerializedName("make")
+    val make: String? = null,
     @SerializedName("mileage")
     val mileage: Int? = null, //REQUIRED
-//    @SerializedName("model")
-//    val model: String? = null,
+    @SerializedName("model")
+    val model: String? = null,
 //    @SerializedName("monthlyPaymentEstimate")
 //    val monthlyPaymentEstimate: MonthlyPaymentEstimate? = null,//DELETED
 //    @SerializedName("mpgCity")
@@ -99,14 +99,22 @@ data class Listings(
 //    val topOptions: List<String?>? = null,
     @SerializedName("transmission")
     val transmission: String? = null,//REQUIRED
-//    @SerializedName("trim")
-//    val trim: String? = null,
+    @SerializedName("trim")
+    val trim: String? = null,
 //    @SerializedName("vdpUrl")
 //    val vdpUrl: String? = null,
 //    @SerializedName("vehicleCondition")
 //    val vehicleCondition: String? = null,
     @SerializedName("vin")
     val vin: String? = null,//REQUIRED
-//    @SerializedName("year")
-//    val year: Int? = null
+    @SerializedName("year")
+    val year: Int? = null
 ):Parcelable
+{
+    fun listingDealerAddress() = "${dealer?.city} | ${dealer?.state}"
+
+    fun listingPriceMileage() = "$currentPrice | $mileage"
+
+    fun listingYearMakeModelTrip() = "$year $make $model $trim"
+    fun getImageUrl() = "${images?.large?.get(0)}"
+}

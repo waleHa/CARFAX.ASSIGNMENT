@@ -6,13 +6,13 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Images(
+data class ImagesRemoteModel(
 //    @SerializedName("baseUrl")
 //    val baseUrl: String? = null,
     @SerializedName("firstPhoto")
-    val firstPhoto: FirstPhoto? = null,//REQUIRED
-//    @SerializedName("large")
-//    val large: List<String?>? = null,
+    val firstPhoto: FirstPhotoRemoteModel,//REQUIRED
+    @SerializedName("large")
+    val large: List<String>? = null,
 //    @SerializedName("medium")
 //    val medium: List<String?>? = null,
 //    @SerializedName("small")

@@ -5,7 +5,9 @@
 
     <data>
 
-
+        <variable
+            name="item"
+            type="com.wa7a.carfaxassignment.data.model.ListingsRemoteModel" />
     </data>
 
 
@@ -28,6 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.75"
+                app:imageSetter="@{item.getImageUrl}"
                 tools:src="@drawable/ic_launcher_background" />
 
             <TextView
@@ -37,6 +40,7 @@
                 android:padding="@dimen/padding_small"
                 android:textAlignment="viewStart"
                 android:textStyle="bold"
+                android:text="@{item.listingYearMakeModelTrip}"
                 tools:text="2011 BMW 3 Series 328i" />
 
             <TextView
@@ -44,6 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/padding_small"
+                android:text="@{item.listingPriceMileage}"
                 android:textAlignment="viewStart"
                 tools:text="$ 17,234 | 39.1K mi" />
             <TextView
@@ -52,6 +57,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="viewStart"
                 android:padding="@dimen/padding_small"
+                android:text="@{item.listingDealerAddress}"
                 tools:text="Highland Park, IL" />
 
 
@@ -62,9 +68,10 @@
                 android:background="@color/very_light_grey"/>
 
             <Button
+                android:id="@+id/button_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="transparent"
+                android:background="@android:color/transparent"
                 android:textColor="@color/blue"
                 android:text="@string/button_text_item"
                 />

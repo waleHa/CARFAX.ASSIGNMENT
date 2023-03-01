@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="padding_small">8dp</dimen>
-    <dimen name="padding_medium">24dp</dimen>
-    <dimen name="padding_large">32dp</dimen>
-    <dimen name="padding_xlarge">64dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+    <dimen name="padding_xlarge">32dp</dimen>
     <dimen name="margin_small">8dp</dimen>
-    <dimen name="margin_medium">24dp</dimen>
-    <dimen name="margin_large">32dp</dimen>
-    <dimen name="margin_bottom_large">80dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_bottom_large">40dp</dimen>
     <dimen name="card_view_height">400dp</dimen>
-    <dimen name="text_small">16dp</dimen>
-    <dimen name="text_medium">24dp</dimen>
-    <dimen name="text_large">32dp</dimen>
-    <dimen name="text_xlarge">45dp</dimen>
+    <dimen name="text_small">8dp</dimen>
+    <dimen name="text_medium">16dp</dimen>
+    <dimen name="text_large">24dp</dimen>
+    <dimen name="text_xlarge">40dp</dimen>
 
 </resources>

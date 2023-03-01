@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class ConsumersResponse(
+data class WrappedListingsRemoteModel(
 //    @SerializedName("backfillCount")
 //    val backfillCount: Int? = null,
 //    @SerializedName("dealerNewCount")
@@ -16,7 +16,7 @@ data class ConsumersResponse(
 //    @SerializedName("enhancedCount")
 //    val enhancedCount: Int? = null,
     @SerializedName("listings")
-    val listings: List<Listings?>? = null, //REQUIRED
+    val listings: List<ListingsRemoteModel?>? = null, //REQUIRED
 //    @SerializedName("page")
 //    val page: Int? = null,
 //    @SerializedName("pageSize")

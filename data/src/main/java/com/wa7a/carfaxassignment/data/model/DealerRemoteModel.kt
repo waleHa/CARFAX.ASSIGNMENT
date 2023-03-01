@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Dealer(
+data class DealerRemoteModel(
 //    @SerializedName("address")
 //    val address: String? = null,
     @SerializedName("carfaxId")
