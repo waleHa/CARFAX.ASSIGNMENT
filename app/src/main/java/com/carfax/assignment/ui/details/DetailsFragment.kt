@@ -1,4 +1,4 @@
-package com.wa7a.carfaxassignment.ui.details
+package com.carfax.assignment.ui.details
 
 
 import android.Manifest
@@ -12,10 +12,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
-import com.wa7a.carfaxassignment.data.model.ListingsRemoteModel
-import com.wa7a.carfaxassignment.databinding.FragmentDetailsBinding
-import com.wa7a.carfaxassignment.utils.Constants
-import com.wa7a.carfaxassignment.utils.Constants.CAR_MODEL
+import com.carfax.assignment.data.model.ListingsRemoteModel
+import com.carfax.assignment.databinding.FragmentDetailsBinding
+import com.carfax.assignment.utils.Constants
+import com.carfax.assignment.utils.Constants.CAR_MODEL
 
 
 class DetailsFragment : Fragment() {

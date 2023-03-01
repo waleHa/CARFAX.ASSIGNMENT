@@ -7,7 +7,7 @@
     <data>
         <variable
             name="WrappedListings"
-            type="com.wa7a.carfaxassignment.data.model.WrappedListingsRemoteModel" />
+            type="com.carfax.assignment.data.model.WrappedListingsRemoteModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1,4 +1,4 @@
-package com.wa7a.carfaxassignment.data.model
+package com.carfax.assignment.data.model
 
 
 import android.os.Parcelable

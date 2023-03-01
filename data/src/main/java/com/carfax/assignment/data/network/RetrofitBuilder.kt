@@ -1,7 +1,7 @@
-package com.wa7a.carfaxassignment.data.network
+package com.carfax.assignment.data.network
 
-import com.wa7a.carfaxassignment.data.BuildConfig
-import com.wa7a.carfaxassignment.data.api.CarListingsAPI
+import com.carfax.assignment.data.BuildConfig
+import com.carfax.assignment.data.datasource.CarDataSource
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -14,5 +14,5 @@ object RetrofitBuilder {
         .build()
 
 
-    val carListingsApi: CarListingsAPI = retrofit.create(CarListingsAPI::class.java)
+    val carListingsApi: CarDataSource = retrofit.create(CarDataSource::class.java)
 }

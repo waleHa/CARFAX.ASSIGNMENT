@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace 'com.wa7a.carfaxassignment'
+    namespace 'com.carfax.assignment'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.wa7a.carfaxassignment"
+        applicationId "com.carfax.assignment"
         minSdk 21
         targetSdk 33
         versionCode 1

@@ -1,4 +1,4 @@
-package com.wa7a.carfaxassignment.ui.listing
+package com.carfax.assignment.ui.listing
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,13 +10,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.wa7a.carfaxassignment.R
-import com.wa7a.carfaxassignment.data.model.ListingsRemoteModel
-import com.wa7a.carfaxassignment.databinding.FragmentListingBinding
-import com.wa7a.carfaxassignment.ui.listing.adapters.CarListingsAdapter
-import com.wa7a.carfaxassignment.ui.listing.adapters.InteractionListener
-import com.wa7a.carfaxassignment.ui.main.MainViewModel
-import com.wa7a.carfaxassignment.utils.Constants.CAR_MODEL
+import com.carfax.assignment.R
+import com.carfax.assignment.data.model.ListingsRemoteModel
+import com.carfax.assignment.databinding.FragmentListingBinding
+import com.carfax.assignment.ui.listing.adapters.CarListingsAdapter
+import com.carfax.assignment.ui.listing.adapters.InteractionListener
+import com.carfax.assignment.ui.main.MainViewModel
+import com.carfax.assignment.utils.Constants.CAR_MODEL
 
 
 class ListingFragment : Fragment(), InteractionListener {
@@ -57,7 +57,6 @@ class ListingFragment : Fragment(), InteractionListener {
                 Toast.LENGTH_LONG
             ).show()
         }
-
     }
 
     override fun onClick(item: ListingsRemoteModel) {

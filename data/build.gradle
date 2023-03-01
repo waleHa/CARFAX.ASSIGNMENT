@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace 'com.wa7a.carfaxassignment.data'
+    namespace 'com.carfax.assignment.data'
     compileSdk 33
 
     defaultConfig {

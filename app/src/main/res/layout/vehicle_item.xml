@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="com.wa7a.carfaxassignment.data.model.ListingsRemoteModel" />
+            type="com.carfax.assignment.data.model.ListingsRemoteModel" />
     </data>
 
 

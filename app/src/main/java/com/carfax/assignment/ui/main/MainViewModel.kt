@@ -1,14 +1,12 @@
-package com.wa7a.carfaxassignment.ui.main
+package com.carfax.assignment.ui.main
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.wa7a.carfaxassignment.data.model.ListingsRemoteModel
-import com.wa7a.carfaxassignment.data.model.WrappedListingsRemoteModel
-import com.wa7a.carfaxassignment.data.repository.MainRepository
-import com.wa7a.carfaxassignment.ui.listing.adapters.InteractionListener
+import com.carfax.assignment.data.model.ListingsRemoteModel
+import com.carfax.assignment.data.model.WrappedListingsRemoteModel
+import com.carfax.assignment.data.repository.MainRepository
 import kotlinx.coroutines.launch
 import retrofit2.Response
 

@@ -1,4 +1,4 @@
-package com.wa7a.carfaxassignment.ui.listing.adapters
+package com.carfax.assignment.ui.listing.adapters
 
 import android.Manifest.permission.CALL_PHONE
 import android.app.Activity
@@ -10,9 +10,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.wa7a.carfaxassignment.data.model.ListingsRemoteModel
-import com.wa7a.carfaxassignment.databinding.VehicleItemBinding
-import com.wa7a.carfaxassignment.utils.Constants.REQUEST_PHONE_CALL
+import com.carfax.assignment.data.model.ListingsRemoteModel
+import com.carfax.assignment.databinding.VehicleItemBinding
+import com.carfax.assignment.utils.Constants.REQUEST_PHONE_CALL
 
 
 class CarListingsAdapter(private val listener: InteractionListener) :
