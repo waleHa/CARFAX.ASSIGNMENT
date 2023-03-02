@@ -15,7 +15,11 @@
 <!--        <item name="android:windowDrawsSystemBarBackgrounds">true</item>-->
 <!--        <item name="android:windowTranslucentStatus">false</item>-->
 
-        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+<!--        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>-->
 
+    </style>
+    <style name="CircularProgressIndicator" parent="">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="trackThickness">20dp</item>
     </style>
 </resources>
