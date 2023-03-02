@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "Carfax Assignment"
 include ':app'
 include ':data'
+include ':core'

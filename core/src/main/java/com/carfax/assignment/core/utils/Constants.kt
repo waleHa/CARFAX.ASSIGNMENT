@@ -1,4 +1,4 @@
-package com.carfax.assignment.utils
+package com.carfax.assignment.core.utils
 
 object Constants {
     const val CAR_MODEL: String = "CarModel"

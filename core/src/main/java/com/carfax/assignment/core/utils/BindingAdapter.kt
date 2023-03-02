@@ -1,4 +1,4 @@
-package com.carfax.assignment.utils
+package com.carfax.assignment.core.utils
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter

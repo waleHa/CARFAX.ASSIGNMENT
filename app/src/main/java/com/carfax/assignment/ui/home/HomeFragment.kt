@@ -16,7 +16,7 @@ import com.carfax.assignment.data.model.CarRemoteModel
 import com.carfax.assignment.databinding.FragmentListingBinding
 import com.carfax.assignment.ui.home.adapter.HomeAdapter
 import com.carfax.assignment.ui.home.adapter.InteractionListener
-import com.carfax.assignment.utils.Constants.CAR_MODEL
+import com.carfax.assignment.core.utils.Constants.CAR_MODEL
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

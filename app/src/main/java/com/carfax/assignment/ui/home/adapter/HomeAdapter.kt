@@ -13,7 +13,7 @@ import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.carfax.assignment.data.model.CarRemoteModel
 import com.carfax.assignment.databinding.VehicleItemBinding
-import com.carfax.assignment.utils.Constants.REQUEST_PHONE_CALL
+import com.carfax.assignment.core.utils.Constants.REQUEST_PHONE_CALL
 
 class HomeAdapter(private val listener: InteractionListener,val item: List<CarRemoteModel>) :
     RecyclerView.Adapter<HomeAdapter.MainViewHolder>() {
