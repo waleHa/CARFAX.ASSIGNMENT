@@ -1,11 +1,11 @@
 # Android CARFAX ASSIGNMENT
 
-Techniqal Aspects:
-in this project I applied and experinced the following: Kotlin, Lifecycle, Navigation Component, View Binding and Data Binding, Adapter Binding, Dagger Hilt DI, Jetpack Components, Material Design, Coroutines, RESTful services, MVVM Architecture Patterns, OOP, Multi Modules, Clean Architecture,  Jetpack DataStore for enabling the offline feature.
+Technical Aspects:
+In this project, I applied and experienced the following: Kotlin, Lifecycle, Navigation Component, View Binding, Data Binding, Adapter Binding, Dagger Hilt DI, Jetpack Components, Material Design, Coroutines, RESTful services, MVVM Architecture Patterns, OOP, Multi Modules, Clean Architecture,  Jetpack DataStore for enabling the offline feature.
 
 
 Information about the project:
-this assigment is was required by Mr. Vivek Shah as a process of the Android Developer Position at Carfax. Due Date for the assigment is March 2, 2023. As instructed by the email this repository is public.
+Mr. Vivek Shah requires this assignment as a process for the Android Developer Position at Carfax. The due date for the project is March 2, 2023. As instructed by the email, this repository is public.
 
 
 Screenshots:
