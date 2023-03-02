@@ -1,7 +1,7 @@
-# CARFAX.ASSIGNMENT
+# Android CARFAX ASSIGNMENT
 
 Techniqal Aspects:
-in this project I applied and experinced the following: Lifecycle, Navigation Component, View Binding and Data Binding, Adapter Binding, Dagger Hilt DI, Jetpack Components, Material Design, Coroutines, RESTful services, MVVM Architecture Patterns, OOP, Multi Modules, Clean Architecture,  Jetpack DataStore for enabling the offline feature.
+in this project I applied and experinced the following: Kotlin, Lifecycle, Navigation Component, View Binding and Data Binding, Adapter Binding, Dagger Hilt DI, Jetpack Components, Material Design, Coroutines, RESTful services, MVVM Architecture Patterns, OOP, Multi Modules, Clean Architecture,  Jetpack DataStore for enabling the offline feature.
 
 
 Information about the project:
