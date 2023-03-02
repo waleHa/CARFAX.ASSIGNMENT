@@ -1,12 +1,10 @@
 package com.carfax.assignment.data.model
 
-
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
+import kotlinx.serialization.Serializable
 
-@Parcelize
-data class WrappedListingsRemoteModel(
+@Serializable
+data class WrappedHomeRemoteModel(
     @SerializedName("listings")
     val listings: List<CarRemoteModel>
-) : Parcelable
+)

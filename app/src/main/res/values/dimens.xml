@@ -7,10 +7,11 @@
     <dimen name="margin_small">8dp</dimen>
     <dimen name="margin_medium">16dp</dimen>
     <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_xlarge">42dp</dimen>
     <dimen name="margin_bottom_large">40dp</dimen>
     <dimen name="card_view_height">400dp</dimen>
     <dimen name="text_small">8dp</dimen>
-    <dimen name="text_medium">16dp</dimen>
+    <dimen name="text_medium">18dp</dimen>
     <dimen name="text_large">24dp</dimen>
     <dimen name="text_xlarge">32dp</dimen>
 

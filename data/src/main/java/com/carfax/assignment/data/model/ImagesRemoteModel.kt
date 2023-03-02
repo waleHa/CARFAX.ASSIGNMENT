@@ -1,14 +1,13 @@
 package com.carfax.assignment.data.model
 
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
+import kotlinx.serialization.Serializable
 
-@Parcelize
+@Serializable
 data class ImagesRemoteModel(
     @SerializedName("firstPhoto")
-    val firstPhoto: FirstPhotoRemoteModel,//REQUIRED
+    val firstPhoto: FirstPhotoRemoteModel,
     @SerializedName("large")
     val large: List<String>? = null,
-) : Parcelable
+)

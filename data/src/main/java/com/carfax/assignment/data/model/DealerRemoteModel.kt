@@ -1,11 +1,10 @@
 package com.carfax.assignment.data.model
 
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
+import kotlinx.serialization.Serializable
 
-@Parcelize
+@Serializable
 data class DealerRemoteModel(
     @SerializedName("carfaxId")
     val carfaxId: String? = null,
@@ -15,4 +14,4 @@ data class DealerRemoteModel(
     val phone: String,
     @SerializedName("state")
     val state: String
-):Parcelable
+)

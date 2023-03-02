@@ -1,11 +1,9 @@
 package com.carfax.assignment.ui.main
 
-import android.graphics.Color
 import android.os.Bundle
+import android.view.View
+import android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -24,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         initNavigation()
         setupToolbarProvider()
     }
@@ -39,32 +36,30 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.detailsFragment -> {
-                    hideSystemUI()
-                    this.window?.statusBarColor = Color.GRAY
+                    this.window?.statusBarColor = resources.getColor(R.color.grey_trans)
+                    hideCustomUI()
                 }
                 else -> {
+                    showCustomUI()
                     this.window?.statusBarColor = resources.getColor(R.color.blue_dark)
-                    showSystemUI()
+
                 }
             }
         }
     }
 
-    private fun hideSystemUI() {
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-        WindowInsetsControllerCompat(window, binding.root).let { controller ->
-            controller.hide(WindowInsetsCompat.Type.systemBars())
-            controller.systemBarsBehavior =
-                WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-        }
+    private fun showCustomUI() {
+        val decorView: View = window.decorView
+        decorView.systemUiVisibility =
+            (SYSTEM_UI_FLAG_LAYOUT_STABLE and View.SYSTEM_UI_FLAG_VISIBLE)
+        this.supportActionBar?.show()
     }
 
-    private fun showSystemUI() {
-        WindowCompat.setDecorFitsSystemWindows(window, true)
-        WindowInsetsControllerCompat(
-            window,
-            binding.root
-        ).show(WindowInsetsCompat.Type.systemBars())
+    private fun hideCustomUI() {
+        val decorView: View = window.decorView
+        decorView.systemUiVisibility =
+            (SYSTEM_UI_FLAG_LAYOUT_STABLE and View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
+        this.supportActionBar?.hide()
     }
 
     override fun onSupportNavigateUp(): Boolean {

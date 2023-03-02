@@ -12,10 +12,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
+import com.carfax.assignment.core.utils.Constants
+import com.carfax.assignment.core.utils.Constants.CAR_MODEL_PARAM
 import com.carfax.assignment.data.model.CarRemoteModel
 import com.carfax.assignment.databinding.FragmentDetailsBinding
-import com.carfax.assignment.core.utils.Constants
-import com.carfax.assignment.core.utils.Constants.CAR_MODEL
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -47,7 +47,7 @@ class DetailsFragment : Fragment() {
 
             ActivityCompat.requestPermissions(
                 context as Activity, arrayOf(Manifest.permission.CALL_PHONE),
-                com.carfax.assignment.core.utils.Constants.REQUEST_PHONE_CALL
+                Constants.REQUEST_PHONE_CALL
             )
         } else {
             startCall(requireNotNull(listingItem?.dealer?.phone))
@@ -55,7 +55,8 @@ class DetailsFragment : Fragment() {
     }
 
     private fun initData() {
-        listingItem = arguments?.getParcelable(CAR_MODEL)
+        listingItem = arguments?.getSerializable(CAR_MODEL_PARAM) as CarRemoteModel
+
         binding.item = listingItem
     }
 

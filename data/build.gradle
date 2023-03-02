@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-parcelize'
     id 'dagger.hilt.android.plugin'
     id 'kotlin-kapt'
+    id 'kotlinx-serialization'
 
 }
 
@@ -17,7 +18,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
-        buildConfigField("String", "baseURL", baseURL)
+        buildConfigField("String", "BASE_URL", baseURL)
     }
 
     buildTypes {
@@ -37,6 +38,7 @@ android {
 
 dependencies {
 
+    implementation project(":core")
     // Annotation processor
     kapt "androidx.lifecycle:lifecycle-compiler:2.5.1"
 
@@ -49,6 +51,14 @@ dependencies {
     implementation 'com.google.dagger:hilt-android:2.44'
     kapt 'com.google.dagger:hilt-android-compiler:2.44'
     implementation 'androidx.hilt:hilt-navigation-fragment:1.0.0'
+
+    //Datastore
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+    api "org.jetbrains.kotlin:kotlin-serialization:1.7.20"
+    api "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1"
+    api "org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5"
+
+
 
 }
 

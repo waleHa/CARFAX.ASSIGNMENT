@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="viewStart"
                 android:padding="@dimen/padding_small"
-                android:text="@{item.listingDealerAddress}"
+                android:text="@{item.carAddress}"
                 tools:text="Highland Park, IL" />
 
 

@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.carfax.assignment.data.model.CarRemoteModel
+import com.carfax.assignment.data.model.WrappedHomeRemoteModel
 import com.carfax.assignment.data.repository.MainRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -22,6 +23,9 @@ class HomeViewModel @Inject constructor(private val repository: MainRepository) 
     private val _loadingLiveData = MutableLiveData<Boolean>()
     val loadingLiveData: LiveData<Boolean> = _loadingLiveData
 
+    private val _carSuccess = MutableLiveData<WrappedHomeRemoteModel>()
+    val successCar: LiveData<WrappedHomeRemoteModel> = _carSuccess
+
     init {
         getCarListings()
     }
@@ -35,4 +39,6 @@ class HomeViewModel @Inject constructor(private val repository: MainRepository) 
         }
         _loadingLiveData.postValue(false)
     }
+
+
 }

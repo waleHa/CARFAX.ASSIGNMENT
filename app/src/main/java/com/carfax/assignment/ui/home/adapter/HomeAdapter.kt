@@ -11,9 +11,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.carfax.assignment.core.utils.Constants.REQUEST_PHONE_CALL
 import com.carfax.assignment.data.model.CarRemoteModel
 import com.carfax.assignment.databinding.VehicleItemBinding
-import com.carfax.assignment.core.utils.Constants.REQUEST_PHONE_CALL
 
 class HomeAdapter(private val listener: InteractionListener,val item: List<CarRemoteModel>) :
     RecyclerView.Adapter<HomeAdapter.MainViewHolder>() {
@@ -34,7 +34,7 @@ class HomeAdapter(private val listener: InteractionListener,val item: List<CarRe
         val currentData = this.item[position]
         holder.bind(currentData)
 
-        startCall(item[position].dealer.phone, holder.binding.buttonItem)
+        startCall(item[position].dealer?.phone.toString(), holder.binding.buttonItem)
 
         holder.itemView.setOnClickListener {
             listener.onClick(item[position])
@@ -68,7 +68,6 @@ class HomeAdapter(private val listener: InteractionListener,val item: List<CarRe
         }
     }
 }
-
 
 
 interface InteractionListener {
