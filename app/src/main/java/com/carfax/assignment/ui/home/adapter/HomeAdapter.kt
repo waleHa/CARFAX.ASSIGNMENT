@@ -1,4 +1,4 @@
-package com.carfax.assignment.ui.listing.adapters
+package com.carfax.assignment.ui.home.adapter
 
 import android.Manifest.permission.CALL_PHONE
 import android.app.Activity
@@ -8,31 +8,16 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.carfax.assignment.data.model.ListingsRemoteModel
+import com.carfax.assignment.data.model.CarRemoteModel
 import com.carfax.assignment.databinding.VehicleItemBinding
 import com.carfax.assignment.utils.Constants.REQUEST_PHONE_CALL
 
-
-class CarListingsAdapter(private val listener: InteractionListener) :
-    RecyclerView.Adapter<CarListingsAdapter.MainViewHolder>() {
-    private var item = listOf<ListingsRemoteModel?>()
+class HomeAdapter(private val listener: InteractionListener,val item: List<CarRemoteModel>) :
+    RecyclerView.Adapter<HomeAdapter.MainViewHolder>() {
     private lateinit var context: Context
-
-    fun setContentList(data: List<ListingsRemoteModel?>) {
-        this.item = data
-        notifyDataSetChanged()
-    }
-
-    inner class MainViewHolder(val binding: VehicleItemBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-        fun bind(listItem: ListingsRemoteModel?) {
-            if (listItem != null) {
-                binding.item = listItem
-            }
-        }
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -49,7 +34,15 @@ class CarListingsAdapter(private val listener: InteractionListener) :
         val currentData = this.item[position]
         holder.bind(currentData)
 
-        holder.binding.buttonItem.setOnClickListener {
+        startCall(item[position].dealer.phone, holder.binding.buttonItem)
+
+        holder.itemView.setOnClickListener {
+            listener.onClick(item[position])
+        }
+    }
+
+    private fun startCall(phoneNumber: String, button: Button) {
+        button.setOnClickListener {
             if (ActivityCompat.checkSelfPermission(
                     context,
                     CALL_PHONE
@@ -61,22 +54,23 @@ class CarListingsAdapter(private val listener: InteractionListener) :
                     REQUEST_PHONE_CALL
                 )
             } else {
-                startCall(requireNotNull(item[position]?.dealer?.phone))
+                val dialIntent = Intent(Intent.ACTION_CALL)
+                dialIntent.data = Uri.parse("tel:$phoneNumber")
+                context.startActivity(dialIntent)
             }
-        }
-        holder.itemView.setOnClickListener {
-            listener.onClick(requireNotNull(item[position]))
         }
     }
 
-    private fun startCall(phoneNumber: String) {
-        val dialIntent = Intent(Intent.ACTION_CALL)
-        dialIntent.data = Uri.parse("tel:$phoneNumber")
-        context.startActivity(dialIntent)
+    inner class MainViewHolder(val binding: VehicleItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(listItem: CarRemoteModel) {
+            binding.item = listItem
+        }
     }
 }
 
 
+
 interface InteractionListener {
-    fun onClick(item: ListingsRemoteModel)
+    fun onClick(item: CarRemoteModel)
 }

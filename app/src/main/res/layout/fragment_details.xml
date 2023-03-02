@@ -7,7 +7,7 @@
     <data>
         <variable
             name="item"
-            type="com.carfax.assignment.data.model.ListingsRemoteModel" />
+            type="com.carfax.assignment.data.model.CarRemoteModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -80,7 +80,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/padding_large"
-            android:text="Vehicle Info"
+            android:text="@string/vehicle_info"
             android:textAlignment="viewStart"
             app:layout_constraintEnd_toEndOf="@+id/text_view_details_year_make_model_trim"
             app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
@@ -89,7 +89,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Location"
+            android:text="@string/location"
             android:textSize="@dimen/text_medium"
             app:layout_constraintEnd_toEndOf="@+id/view1"
             app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
@@ -109,7 +109,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Exterior Color"
+            android:text="@string/exterior_color"
             android:textSize="@dimen/text_medium"
             app:layout_constraintEnd_toEndOf="@+id/view1"
             app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
@@ -129,7 +129,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Interior Color"
+            android:text="@string/interior_color"
             android:textSize="@dimen/text_medium"
             app:layout_constraintEnd_toEndOf="@+id/view1"
             app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
@@ -150,7 +150,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Drive Type"
+            android:text="@string/drive_type"
             android:textSize="@dimen/text_medium"
             app:layout_constraintEnd_toEndOf="@+id/view1"
             app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
@@ -170,7 +170,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Transmission"
+            android:text="@string/transmission"
             android:textSize="@dimen/text_medium"
             app:layout_constraintEnd_toEndOf="@+id/view1"
             app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
@@ -190,7 +190,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Body Style"
+            android:text="@string/body_style"
             android:textSize="@dimen/text_medium"
             app:layout_constraintEnd_toEndOf="@+id/view1"
             app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
@@ -210,7 +210,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Engine"
+            android:text="@string/engine"
             android:textSize="@dimen/text_medium"
             app:layout_constraintEnd_toEndOf="@+id/view1"
             app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"
@@ -231,7 +231,7 @@
             android:id="@+id/textView3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Fuel"
+            android:text="@string/fuel"
             android:textSize="@dimen/text_medium"
             app:layout_constraintEnd_toEndOf="@+id/view1"
             app:layout_constraintStart_toStartOf="@+id/text_view_details_year_make_model_trim"

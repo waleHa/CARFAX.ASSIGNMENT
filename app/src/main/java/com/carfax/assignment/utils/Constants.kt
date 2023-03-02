@@ -1,6 +1,6 @@
 package com.carfax.assignment.utils
 
 object Constants {
-    val CAR_MODEL: String = "CarModel"
-    val REQUEST_PHONE_CALL = 1
+    const val CAR_MODEL: String = "CarModel"
+    const val REQUEST_PHONE_CALL = 1
 }

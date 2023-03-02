@@ -10,4 +10,3 @@ fun ImageView.imageSetter(url: String?) {
         Glide.with(this).load(url).centerCrop().into(this)
     }
 }
-

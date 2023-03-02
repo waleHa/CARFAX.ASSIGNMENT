@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listingFragment"
-        android:name="com.carfax.assignment.ui.listing.ListingFragment"
+        android:name="com.carfax.assignment.ui.home.HomeFragment"
         android:label="ListingFragment"
         tools:layout="@layout/fragment_listing">
         <action

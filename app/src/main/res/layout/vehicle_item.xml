@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="item"
-            type="com.carfax.assignment.data.model.ListingsRemoteModel" />
+            type="com.carfax.assignment.data.model.CarRemoteModel" />
     </data>
 
 

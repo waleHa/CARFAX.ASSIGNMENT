@@ -12,19 +12,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
-import com.carfax.assignment.data.model.ListingsRemoteModel
+import com.carfax.assignment.data.model.CarRemoteModel
 import com.carfax.assignment.databinding.FragmentDetailsBinding
 import com.carfax.assignment.utils.Constants
 import com.carfax.assignment.utils.Constants.CAR_MODEL
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class DetailsFragment : Fragment() {
     private lateinit var binding: FragmentDetailsBinding
-    private var listingItem: ListingsRemoteModel? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private var listingItem: CarRemoteModel? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,17 +29,14 @@ class DetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentDetailsBinding.inflate(layoutInflater)
-        initViews()
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        initData()
         binding.buttonDetails.setOnClickListener { onClickButton() }
-
     }
-
 
     private fun onClickButton() {
         if (ActivityCompat.checkSelfPermission(
@@ -60,16 +54,15 @@ class DetailsFragment : Fragment() {
         }
     }
 
-    private fun initViews(): ListingsRemoteModel? {
-        listingItem = arguments?.getParcelable<ListingsRemoteModel>(CAR_MODEL)
+    private fun initData() {
+        listingItem = arguments?.getParcelable(CAR_MODEL)
         binding.item = listingItem
-        return listingItem
     }
 
     private fun startCall(phoneNumber: String) {
         val dialIntent = Intent(Intent.ACTION_CALL)
         dialIntent.data = Uri.parse("tel:$phoneNumber")
-        requireContext()?.startActivity(dialIntent)
+        requireActivity().startActivity(dialIntent)
     }
 
 }
